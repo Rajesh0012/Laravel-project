@@ -1,2 +1,2 @@
-# laravel
+# Laravel
 mini-projects
