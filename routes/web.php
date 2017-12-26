@@ -13,6 +13,9 @@
 Route::get('controller',"mycontroller@index");
 Route::post('insertdata',"mycontroller@insert");
 Route::match(['get', 'post'],'add','praticeController@add');
+Route::match(['get', 'post'],'update','praticeController@update');
+Route::get('list','praticeController@getdata');
+Route::get('delete','praticeController@delete');
 
 
 Route::get('/', function () {

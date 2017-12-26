@@ -12,31 +12,38 @@
 
 <div class="container">
     <h2>Horizontal form</h2>
-    <form class="form-horizontal" method="post" action="">
+
+    <form enctype="multipart/form-data" class="form-horizontal" method="post" action="">
         {{ csrf_field() }}
         <div class="form-group">
             <label class="control-label col-sm-2" for="email">Name:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="email" placeholder="Enter email" name="name">
+                <input type="file" name="img">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="email" value="@if(!empty($edit->name)){{$edit->name}} @endif" placeholder="Enter email" name="name">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Email:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="email">
+                <input type="text" class="form-control" id="pwd" value="@if(!empty($edit->email)){{$edit->email}} @endif" placeholder="Enter password" name="email">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Phone:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="phone">
+                <input type="text" class="form-control" id="pwd" value="@if(!empty($edit->phone)){{$edit->phone}} @endif" placeholder="Enter password" name="phone">
             </div>
         </div>
 
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <input type="submit" name="submit" value="Submit" class="btn btn-default">
             </div>
         </div>
         <div class="form-group">
